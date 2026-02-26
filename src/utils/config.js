@@ -1,5 +1,3 @@
-// src/utils/config.js
-import { API_BASE } from '../utils/config';
 // تحديد رابط الباك إند بناءً على البيئة
 export const API_BASE = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
     ? "http://127.0.0.1:8000"

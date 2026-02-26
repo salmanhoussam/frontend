@@ -20,7 +20,7 @@ export const useMenuData = (slug) => {
                 setError(null);
                 
                 // سيستخدم الرابط الحقيقي تلقائياً عند الرفع
-                const response = await fetch(`${API_BASE}/api/menu/full/${slug}`);
+                const response = await fetch(`https://menu1.salmansaas.com/api/menu/full/${slug}`);
                 
                 if (!response.ok) {
                     throw new Error('Restaurant not found');

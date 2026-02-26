@@ -4,11 +4,15 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    host: true,
-    port: process.env.PORT || 5173,
+    // إعدادات خادم التطوير (ليس ضرورياً للإنتاج لكن نضيفها للتوثيق)
+    allowedHosts: ['resto.salmansaas.com'],
   },
   preview: {
-    host: true,
+    // هذا هو المهم لـ vite preview في الإنتاج
+    allowedHosts: ['resto.salmansaas.com'],
+    // إذا أردت السماح بجميع النطاقات (للتجربة فقط، غير آمن):
+    // allowedHosts: true,
     port: process.env.PORT || 4173,
+    host: true,
   }
 })

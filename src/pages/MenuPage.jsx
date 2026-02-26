@@ -111,7 +111,7 @@ const MenuPage = () => {
             </main>
 
             {/* شريط السلة العائم في الأسفل */}
-            <FloatingCart onOpenCart={() => alert("سيتم فتح نافذة السلة قريباً!")} />
+            <FloatingCart restaurantPhone={restaurant?.phone} />
         </div>
     );
 };

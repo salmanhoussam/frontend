@@ -1,19 +1,20 @@
 // src/utils/config.js
 
+// تحديد رابط الباك إند بناءً على البيئة
 export const API_BASE = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
     ? "http://127.0.0.1:8000"
-    : "https://menu1.salmansaas.com"; // الباك إند الأساسي
+    : "https://menu1.salmansaas.com";
 
-// 1. دالة لمعرفة بيئة العمل الحالية (المنيو أم الداشبورد؟)
+// دالة لمعرفة بيئة العمل
 export const getAppEnvironment = () => {
     const hostname = window.location.hostname;
     if (hostname.startsWith('admin.')) {
-        return 'ADMIN'; // نحن الآن في لوحة التحكم
+        return 'ADMIN';
     }
-    return 'MENU'; // نحن في منيو المطعم
+    return 'MENU';
 };
 
-// 2. دالة استخراج Slug المنيو (كما هي)
+// دالة استخراج Slug المنيو
 export const getMenuSlug = () => {
     const hostname = window.location.hostname;
     const parts = hostname.split('.');

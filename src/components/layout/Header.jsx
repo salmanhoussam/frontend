@@ -2,8 +2,12 @@ import React from 'react';
 
 const Header = ({ restaurant, lang, t }) => {
     const restName = lang === 'ar' ? restaurant.name_ar : restaurant.name_en;
-    const coverImage = restaurant.image_url || 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800';
-    const logoImage = restaurant.image_url || 'https://placehold.co/100x100?text=Logo'; // يمكنك لاحقاً إضافة حقل خاص للوجو في الداتابيز
+    
+    // صورة الغلاف: cover_image إذا كانت موجودة، وإلا image_url، وإلا صورة افتراضية
+    const coverImage = restaurant.cover_image || restaurant.image_url || 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800';
+    
+    // اللوجو: image_url (يمكنك لاحقاً إضافة حقل خاص للوجو في الداتابيز إذا أردت)
+    const logoImage = restaurant.image_url || 'https://placehold.co/100x100?text=Logo';
 
     return (
         <header className="relative h-64 bg-gray-200">

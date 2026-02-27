@@ -10,7 +10,7 @@ import CategoriesBar from '../components/menu/CategoriesBar';
 import MenuItemCard from '../components/menu/MenuItemCard';
 import FloatingCart from '../components/layout/FloatingCart';
 
-const MenuPage = () => {
+const RestaurantPage = () => {  // 🔵 تم التعديل هنا
     // 1. استخراج السلوغ وجلب البيانات
     const slug = getMenuSlug() || 'arizona'; 
     const { data, loading, error } = useMenuData(slug);
@@ -116,4 +116,4 @@ const MenuPage = () => {
     );
 };
 
-export default MenuPage;
+export default RestaurantPage;  // 🔵 تم التعديل هنا
